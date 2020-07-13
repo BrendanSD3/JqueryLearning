@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Start file</title>
+</head>
+
+<body>
+  <p id="example"></p>
+  <p id="text1">Simple text that you can click</p>
+  <p id="text2">Simple text that you can point with mouse</p>
+  <p class="sampleText">Simple text 1</p>
+  <p class="sampleText text-danger" style="display: none">Simple text 2</p>
+  <button id="toggleButton">Toggle button</button>
+  <form>
+    <input id="target" type="text" value="Hello there">
+  </form>
+  <p>Paragraph - <span id="scrollTest" class="text-danger" style="display: none;">Scroll happened!</span></p>
+
+
+
+
+
+  <!-- JQuery -->
+  <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+  <!-- Your code -->
+  <script>
+    // Just an example
+    $('#example').html("My First jQuery script");
+
+    jQuery(document).ready(function(){
+
+$("#text1").click(function(){
+$(this).html('Updated text after click');
+});
+$("#text2").hover(function(){
+$(this).html('Updated text when you hover your mose over it');
+});
+
+$("#toggleButton").click(function(){
+$('.sampleText').toggle();
+});
+$( "#target" ).keydown(function() {
+alert( "Handler for .keydown() called." );
+});
+
+$( window ).scroll(function() {
+$( "#scrollTest" ).css( "display", "inline" ).fadeOut( "slow" );
+});
+
+});
+  </script>
+</body>
+
+</html>
